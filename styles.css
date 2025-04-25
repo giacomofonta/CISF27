@@ -1,0 +1,808 @@
+/* Reset e impostazioni di base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-display: swap; /* Assicura che il testo appaia con una font di fallback fino al caricamento */
+}
+
+
+/* Contenitore centrale */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ----------------------- */
+/* Header, Navbar e Hero   */
+/* ----------------------- */
+
+.site-header {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Navbar Sticky: rimane visibile durante lo scroll */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+  background-color: #0066cc;
+  padding: 10px 0;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px; /* Aggiungi più spazio ai lati */
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px; /* Aggiunge uno spazio di 20px a sinistra */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links li a {
+  display: block;
+  padding: 8px 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Stato "active": solo colore accent */
+.nav-links li a.active {
+  background: none; /* Rimuove lo sfondo */
+  text-decoration: none; /* Rimuove sottolineature */
+  outline: none; /* Rimuove eventuali contorni evidenziati */
+  font-weight: 1000;
+  position: relative; /* Necessario per posizionare la linea sotto */
+}
+
+.nav-links li a.active::after {
+    content: ""; /* Aggiunge la linea */
+    position: absolute; /* Posiziona la linea in relazione al link */
+    bottom: -1px; /* Sposta la linea leggermente sotto il testo */
+    left: 50%; /* Posizionamento centrale */
+    transform: translateX(-50%); /* Centra la linea rispetto al link */
+    width: 60%; /* Lunghezza variabile, modificabile */
+    height: 3px; /* Spessore della linea */
+    background-color: #fff; /* Colore della linea */
+    border-radius: 4px; /* Arrotonda gli estremi della linea */
+    transition: width 0.3s ease; /* Transizione fluida per effetti */
+}
+
+/* Stato "hover": colore più chiaro */
+.nav-links li a:hover {
+  background: none; /* Nessuno sfondo o bordi */
+  color: #66aaff; /* Colore più chiaro per il hover */
+  text-decoration: none; /* Assicura che non ci siano sottolineature */
+  outline: none; /* Rimuove eventuali contorni evidenziati */
+
+}
+.nav-links li a.active:hover::after {
+    width: 80%; /* Allunga la linea al passaggio del mouse */
+}
+
+.content-offset {
+  height: 60px; /* Regola in base all'altezza della navbar */
+}
+
+
+/* ------------------- */
+/* Sezione Hero        */
+/* ------------------- */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background-position: center center;
+  /* Aggiunta un fallback se l'immagine non viene caricata */
+  background-color: #000;
+  opacity: 0; /* Partiamo con l'immagine invisibile */
+  transform: scale(1.05); /* Zoom leggero all'inizio */
+  animation: heroEaseIn .5s ease-in forwards; /* Animazione in entrata */
+  z-index: 2; /* Sotto il contenuto */
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 0.1s ease-out; /* Movimento fluido */
+}
+
+
+
+/* Definizione dell'animazione */
+@keyframes heroEaseIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.05); /* Partiamo con un leggero zoom */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* Tornare a scala normale */
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2; /* Sotto il contenuto */
+
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.5);
+  animation: fadeInDown 1s ease-out;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  animation: fadeInUp 1s ease-out;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+
+.primary-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #0066cc, #00ccff); /* Sfondo fisso */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transizione solo su ombra e scala */
+}
+
+.primary-button:hover {
+  transform: scale(1.12); /* Effetto di ingrandimento */
+  box-shadow: 0 10px 15px rgba(0, 102, 204, 0.3); /* Mantieni l'ombra */
+}
+
+
+
+/* Bottone outline: interno bianco, bordo gradiente e testo con gradiente */
+.outline-button {
+  display: inline-flex;
+
+  /* Il trucco consiste nel definire un background composto da due strati:
+     - Il primo (padding-box) è bianco, coprendo l'interno dell'elemento
+     - Il secondo (border-box) è il gradiente per il bordo */
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(135deg, #0066cc, #00ccff) border-box;
+
+  border: 3px solid transparent;  /* Crea lo spazio per il bordo gradiente */
+  border-radius: 40px;              /* Forma a pillola; modifica questo valore se vuoi una pillola più arrotondata */
+  padding: 15px 30px;               /* Regola il padding a tuo piacimento */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transform: scale(.93); /* Effetto di ingrandimento */
+  color: transparent;              /* Nasconde il colore testo originale per far vedere solo l'effetto clip */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transizione solo su ombra e scala */
+  margin-right: 40px; /* Aggiunge spazio interno a destra */
+
+}
+
+/* Il testo all'interno del bottone: applica il gradiente tramite background-clip */
+.outline-button span {
+  background: linear-gradient(135deg, #0066cc, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.outline-button:hover {
+  transform: scale(1.05); /* Effetto di ingrandimento */
+  box-shadow: 0 10px 15px rgba(0, 102, 204, 0.3); /* Mantieni l'ombra */
+}
+
+/* Contenitore dei bottoni nell'hero */
+.hero-buttons {
+  display: flex;
+  gap: 15px; /* Spazio tra i due bottoni */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Stile per il bottone con la freccia animata */
+.scroll-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 3px solid #0F8FDE;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 40px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.scroll-button:hover {
+  background: #0F8FDE;
+  color: #fff;
+  transform: scale(1.09); /* Effetto di ingrandimento */
+  box-shadow: 0 10px 15px rgba(0, 102, 204, 0.3); /* Mantieni l'ombra */
+}
+
+
+
+.scroll-button .arrow {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform:  translateY(-2px) rotate(45deg);
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.scroll-button:hover .arrow {
+  transform: rotate(45deg) translateY(-1px); /* Anima la freccia verso il basso */
+}
+
+
+
+
+
+
+/* Animazioni */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------- */
+/* Sezioni Principali        */
+/* ------------------------- */
+/* Sezione "Di Cosa Si Tratta?" */
+.about-event {
+  text-align: left;
+  padding: 40px 30px;
+  background-color: #f2f2f2; /* o il colore che preferisci */
+  max-width: 1100px;
+  margin: 0 auto; /* Centra l'intera sezione nella pagina */
+}
+
+.about-event-subtitle {
+  color: #0066cc;  /* accent color */
+  font-size: 1rem;
+  margin-left: 20px; /* Sposta leggermente a destra i testi rispetto al padding */
+  margin-bottom: 20px; /* Crea uno spazio uniforme tra i vari testi */
+  text-transform: uppercase;
+}
+.about-event-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-left: 20px; /* Sposta leggermente a destra i testi rispetto al padding */
+  margin-bottom: 20px;
+}
+
+.about-event-text {
+  font-size: 1rem;
+  max-width: 1000px;
+  margin-left: 20px; /* Sposta leggermente a destra i testi rispetto al padding */
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #333; /* Assicura un buon contrasto con lo sfondo */
+}
+
+
+.intro-section,
+.gallery-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.intro-section h2,
+.gallery-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0066cc;
+}
+
+.intro-section p {
+  font-size: 1.1rem;
+  max-width: 1000px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Spaziature */
+.spacer {
+        height: 50px; /* Regola l'altezza a seconda delle tue esigenze */
+      }
+.tiny-spacer {
+        height: 25px; /* Regola l'altezza a seconda delle tue esigenze */
+      }
+
+/* Sponsor Section */
+.sponsors-section .sponsors-text {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.sponsors-section {
+  background: #fff;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.sponsors-slider {
+  overflow: hidden;
+}
+
+.sponsors-track {
+  /* Utilizziamo inline-block e white-space: nowrap per forzare la continuità */
+  display: inline-block;
+  white-space: nowrap;
+  /* L'animazione sposta la track di -50% della sua larghezza (ossia un set completo) */
+  animation: slideSponsors 40s linear infinite;
+}
+
+.sponsors-track img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 30px;
+  height: 60px;
+  /* Impedisce che le immagini si riducano */
+  flex-shrink: 0;
+}
+
+/* Animazione continua: dalla posizione iniziale fino a spostare verso sinistra di una lunghezza pari al primo set */
+@keyframes slideSponsors {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ------------------------- */
+/* Footer                    */
+/* ------------------------- */
+
+/* Footer a larghezza piena */
+.site-footer {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  margin-top: 40px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 20px; /* per dare un po' di padding interno */
+}
+
+/* Area sinistra del footer */
+.footer-left p {
+  white-space: nowrap; /* Evita che il testo vada a capo */
+  margin-top: 10px; /* Spazio superiore, se necessario */
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  max-width: 250px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  /* Rimuove margin laterali extra in modo che il logo sia allineato al bordo */
+}
+/* Area destra del footer: titolo e social */
+.footer-right {
+  text-align: center;
+}
+
+.footer-title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: -30px;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.footer-container p {
+  margin: 10px 0;
+}
+
+/* Social Icons in Footer con label e dimensioni ridotte */
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: left;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Spazio tra etichetta e icona */
+  text-decoration: none;
+  margin-left: 180px; /* Aggiunge uno spostamento verso destra */
+}
+
+.social-item img {
+  width: 28px;  /* Icona più piccola */
+  height: auto;
+}
+
+.social-text {
+  font-size: 1.5rem;
+  color: #fff;
+  /* Aggiungi ulteriori proprietà se vuoi personalizzare il font */
+}
+
+
+
+/* ------------------------- */
+/* Mobile Menu               */
+/* ------------------------- */
+
+/* Icona hamburger: solo in mobile */
+
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+  position: relative; /* Assicura che il posizionamento sia relativo al contenitore */
+  right: 10px; /* Sposta leggermente il pulsante verso sinistra */
+  top: 0; /* Assicurati che sia centrato verticalmente */
+  margin-right: 10px; /* Aggiunge spazio interno a destra */
+}
+
+.mobile-menu-icon .hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  position: relative;
+}
+
+.mobile-menu-icon .hamburger::before,
+.mobile-menu-icon .hamburger::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-icon .hamburger::before {
+  top: -8px;
+}
+
+.mobile-menu-icon .hamburger::after {
+  top: 8px;
+}
+
+/* Contenitore del menu mobile: off-canvas */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transition: right 0.3s ease-in-out; /* Rallenta la transizione a 0.5 secondi */
+  z-index: 1100;
+  padding: 20px;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-menu ul li {
+  margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+}
+/* Stile per il link attivo nel menu mobile */
+.mobile-menu ul li a.active {
+  color: #0066cc;  /* Accent color */
+  font-weight: 1000; /* Oppure qualsiasi altra modifica grafica che preferisci */
+}
+
+
+.close-menu {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Overlay per mobile con effetto blur */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, backdrop-filter 0.4s ease; /* Transizioni fluide */
+  z-index: 1050;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ------------------------- */
+/* Responsive (max-width:950px) */
+/* ------------------------- */
+
+@media (max-width: 1050px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 95%;
+  }
+}
+
+/* ================================ */
+/* Media query per Tablet (≤ 768px) */
+/* ================================ */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px; /* Riduci il padding laterale se necessario */
+  }
+
+  /* Rimuoviamo valori fissi che causano tagli */
+  .footer-left,
+  .footer-right {
+    width: 100%;
+    min-width: auto;
+  }
+
+  /* Centriamo il logo nel footer */
+  .footer-logo {
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+
+  /* Permettiamo al testo di andare a capo naturalmente */
+  .footer-left p {
+    white-space: normal;
+    margin: 10px 0;
+  }
+
+  /* Social Icons: rimuoviamo il margin-left forzato e centriamo il contenuto */
+  .social-icons {
+    align-items: center;
+  }
+
+  .social-item {
+    margin-left: 0; /* Rimuove lo spostamento forzato a destra */
+    justify-content: center;
+  }
+}
+
+/* ================================= */
+/* Media query per Smartphone (≤ 480px) */
+/* ================================= */
+@media (max-width: 480px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  /* Riorganizziamo gli elementi con l'uso di "order" */
+  .footer-right {
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+  .footer-left {
+    order: 2;  /* Sposta questa sezione in basso */
+    width: 100%;
+    text-align: left; /* Allinea il testo a sinistra */
+  }
+}
+
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  /* Puoi lasciare la transition per avere un effetto "soft" se vuoi,
+     ma in questo caso il JavaScript aggiorna direttamente lo style inline */
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+
+/* ================================ */
+/* Programma */
+/* ================================ */
+
+
+@media (min-width: 1024px) {
+  /* Se il container non si espande abbastanza, aumenta il max-width oppure impostalo al 100% */
+  .programma-container {
+    padding: 10px;
+    max-width: 1400px;  /* Aumenta la larghezza massima se necessario */
+    margin: 0 auto;
+  }
+
+  .programma-cards {
+    /* Forza 5 colonne in maniera fissa */
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 10px !important;    /* Riduci il gap tra le colonne */
+  }
+}
+
+
+
+
+/*Esperimenti, traccia comete*/
+/* Stile base per la cometa */
+.comet {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color);  /* definito via JS */
+  pointer-events: none;
+  animation: cometAnim var(--dur) linear var(--delay) forwards;
+}
+
+/* Pseudo-elemento: la coda della cometa */
+.comet::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40px;           /* lunghezza della coda – modifica a piacere */
+  height: 2px;
+  background: rgba(200,200,200,0.5);  /* leggera traccia grigia */
+  transform-origin: left center;
+  /* La coda parte esattamente dal centro, quindi non trasliamo in X; trasliamo solo in Y per centrare verticalmente */
+  transform: translate(0, -50%) rotate(var(--tailAngle));
+  animation: tailFade var(--dur) linear var(--delay) forwards;
+}
+
+/* Animazione della cometa: semplicemente si muove e scompare */
+@keyframes cometAnim {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty));
+    opacity: 0;
+  }
+}
+
+/* Animazione per far svanire la coda */
+@keyframes tailFade {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}

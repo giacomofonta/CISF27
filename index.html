@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- NO INDEXING, inserito anche il file robots.txt -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>CISF 2027 - Trento</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Link al file CSS aggiornato -->
+    <link rel="stylesheet" href="styles.css">
+
+
+
+  </head>
+  <body>
+
+    <!-- Header con Navigazione e Hero -->
+    <header class="site-header">
+      <!-- Navbar fixed: sempre visibile -->
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <a href="index.html">CISF 2027</a>
+          </div>
+          <!-- Desktop: menu a listato -->
+          <ul class="nav-links desktop-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="programma.html">Programma</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="strutture.html">Strutture</a></li>
+            <li><a href="chi-siamo.html">Chi siamo</a></li>
+            <li><a href="sponsor.html">Sponsor</a></li>
+            <li><a href="iscrizioni.html">Iscrizioni</a></li>
+          </ul>
+          <!-- Mobile: icona hamburger -->
+          <div class="mobile-menu-icon">
+            <span class="hamburger"></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+      <!-- Sezione Hero -->
+      <section class="hero">
+        <img src="images/trento-hero.jpeg" alt="Trento Hero" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1>CISF 2027</h1>
+          <p>La Conferenza Italiana degli Studenti di Fisica a Trento</p>
+          <a href="programma.html" class="primary-button">Programma</a>
+          <div class="hero-buttons">
+            <!-- Bottone "Scopri di più" con freccia animata -->
+            <a href="#" class="scroll-button" onclick="scrollToSection(700)">
+              <span>Scopri di più</span>
+              <div class="arrow"></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+
+    <!-- Spazio top (per evitare che il contenuto sia coperto dalla navbar fixed) -->
+    <div class="content-offset"></div>
+
+    <!-- Sezione "Di Cosa Si Tratta?" subito sotto il Hero -->
+    <section class="about-event animate-on-scroll">
+      <p class="about-event-subtitle">DI COSA SI TRATTA?</p>
+      <h2 class="about-event-title">CISF: Il principale evento annuale di AISF!</h2>
+      <p class="about-event-text">
+        La Conferenza Italiana Studenti di Fisica (CISF) è l’evento annuale di punta organizzato dall’Associazione Italiana Studenti di Fisica (AISF). I partecipanti avranno l’opportunità di prendere parte ai seminari tenuti da ricercatori esperti a livello nazionale ed internazionale (sia interni che esterni all’Università di Milano-Bicocca) e potranno visitare i laboratori e i centri di ricerca situati sul territorio milanese. Inoltre, non mancheranno momenti dedicati alla scoperta della città e a serate all’insegna del divertimento e della socialità.
+      </p>
+      <p class="about-event-text">
+        Come ogni CISF che si rispetti, una giornata sarà dedicata all’AGA (Assemblea Generale Annuale), dove tutta AISF (o quasi) si riunisce per prendere decisioni sull’anno che verrà!
+      </p>
+    </section>
+    <div class="spacer"></div>
+    <section class="about-event animate-on-scroll">
+      <p class="about-event-subtitle">QUANDO E DOVE?</p>
+      <h2 class="about-event-title">A Trento dal 10 al 15 marzo</h2>
+      <p class="about-event-text">
+        La IX edizione della CISF sarà ospitata dal comitato locale di Milano-Bicocca dal 25 al 30 marzo 2025.
+        Il Comitato Organizzatore promette un programma ricco e coinvolgente, con diverse tipologie di attività da svolgersi sia all’interno dall’Ateneo di Milano-Bicocca sia in spazi iconici della città di Milano!
+      </p>
+    </section>
+    <div class="spacer"></div>
+
+
+    <!-- Main (altri contenuti, animati via scroll) -->
+    <main class="container">
+
+
+      <!-- Sezione Sponsor con testo sopra il carosello -->
+      <a href="sponsor.html" style="text-decoration: none;">
+        <section class="sponsors-section">
+          <p class="sponsors-text">si ringrazia:</p>
+          <div class="tiny-spacer"></div>
+
+          <div class="sponsors-slider">
+            <div class="sponsors-track">
+              <!-- Primo set -->
+              <img src="images/UniTrento_colore.png" alt="Sponsor 1">
+              <img src="images/Comune-di-Trento.png" alt="Sponsor 12">
+              <img src="images/sponsor1.png" alt="Sponsor 1">
+              <img src="images/sponsor2.png" alt="Sponsor 2">
+              <img src="images/sponsor4.png" alt="Sponsor 4">
+              <img src="images/sponsor6.png" alt="Sponsor 6">
+              <img src="images/sponsor7.png" alt="Sponsor 7">
+              <img src="images/sponsor8.png" alt="Sponsor 8">
+              <img src="images/sponsor9.png" alt="Sponsor 9">
+              <img src="images/sponsor10.png" alt="Sponsor 10">
+              <img src="images/sponsor11.png" alt="Sponsor 11">
+              <!-- Second set (duplicato) -->
+              <img src="images/UniTrento_colore.png" alt="Sponsor 1">
+              <img src="images/Comune-di-Trento.png" alt="Sponsor 12">
+              <img src="images/sponsor1.png" alt="Sponsor 1">
+              <img src="images/sponsor2.png" alt="Sponsor 2">
+              <img src="images/sponsor4.png" alt="Sponsor 4">
+              <img src="images/sponsor6.png" alt="Sponsor 6">
+              <img src="images/sponsor7.png" alt="Sponsor 7">
+              <img src="images/sponsor8.png" alt="Sponsor 8">
+              <img src="images/sponsor9.png" alt="Sponsor 9">
+              <img src="images/sponsor10.png" alt="Sponsor 10">
+              <img src="images/sponsor11.png" alt="Sponsor 11">
+            </div>
+          </div>
+        </section>
+      </a>
+    </main>
+
+    <!-- Footer a larghezza piena -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- Area sinistra: logo e copyright -->
+        <div class="footer-left">
+          <img class="footer-logo" src="images/footer-logo.png" alt="Logo CISF">
+          <p>&copy; 2027 CISF - Conferenza Italiana degli Studenti di Fisica. Tutti i diritti riservati.</p>
+        </div>
+        <!-- Area destra: titolo e social -->
+        <div class="footer-right">
+          <h3 class="footer-title">Contatti</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/cisf.27" target="_blank" class="social-item">
+              <img src="icons/ig-logo-white.png" alt="Instagram">
+              <span class="social-text">@cisf.27</span>
+            </a>
+            <a href="mailto:cisf27@ai-sf.it" class="social-item">
+              <img src="icons/mail-icon-white.png" alt="Email">
+              <span class="social-text">cisf27@ai-sf.it</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+    function animateOnScroll() {
+      const windowHeight = window.innerHeight;
+      // Seleziona tutti gli elementi con la classe animate-on-scroll
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        // Riduci il coefficiente per iniziare l'animazione prima
+        let ratio = 1 - ((rect.top-250) / (windowHeight * 1)); // Valore più basso per anticipare
+        ratio = Math.min(Math.max(ratio, 0), 1); // Limita il valore tra 0 e 1
+        el.style.opacity = ratio; // Aggiorna l'opacità
+        // Riduci la traslazione verticale per rendere l'effetto più discreto e rapido
+        const translateY = 100 * (1 - ratio);
+        el.style.transform = `translateY(${translateY}px)`;
+      });
+    }
+    // Chiamata iniziale
+    animateOnScroll();
+    // Aggiorna ad ogni scroll
+    window.addEventListener('scroll', animateOnScroll);
+  </script>
+
+
+  <script>
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY; // Posizione attuale dello scroll
+        const heroImg = document.querySelector('.hero img'); // Seleziona l'immagine
+        if (heroImg) {
+            // Movimento verticale (parallasse)
+            const baseZoom = 1.1; // Zoom iniziale per coprire l'hero
+            const maxTranslateY = heroImg.offsetHeight * (baseZoom - 1); // Massimo scorrimento in base allo zoom
+
+            // Calcola lo spostamento verticale con un limite massimo
+            const translateY = Math.min(-(scrollPosition * 0.1), maxTranslateY);
+
+            // Applica trasformazioni: spostamento e zoom
+            heroImg.style.transform = `translateY(${translateY}px) scale(${baseZoom + scrollPosition * 0.0002})`;
+        }
+      });
+  </script>
+
+
+    <!-- Menu Mobile: off-canvas -->
+    <div class="mobile-menu">
+      <button class="close-menu">&times;</button>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="programma.html">Programma</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="strutture.html">Strutture</a></li>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="sponsor.html">Sponsor</a></li>
+        <li><a href="iscrizioni.html">Iscrizioni</a></li>
+      </ul>
+    </div>
+
+    <!-- Overlay per il menu mobile -->
+    <div class="menu-overlay"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Seleziona gli elementi
+        const hamburger = document.querySelector(".mobile-menu-icon");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const closeButton = document.querySelector(".close-menu");
+        const overlay = document.querySelector(".menu-overlay");
+
+        // Funzione per aprire il menu mobile
+        function openMenu() {
+          mobileMenu.classList.add("active");
+          overlay.classList.add("active");
+        }
+
+        // Funzione per chiudere il menu mobile
+        function closeMenu() {
+          mobileMenu.classList.remove("active");
+          overlay.classList.remove("active");
+        }
+
+        // Gestisci il click sul tasto hamburger
+        if (hamburger) {
+          hamburger.addEventListener("click", openMenu);
+        }
+
+        // Gestisci il click sul pulsante di chiusura, se presente
+        if (closeButton) {
+          closeButton.addEventListener("click", closeMenu);
+        }
+
+        // Chiusura del menu cliccando sull'overlay
+        if (overlay) {
+          overlay.addEventListener("click", closeMenu);
+        }
+      });
+    </script>
+
+
+    <!--Esperimenti, traccia comete-->
+    <script>
+      function createComet() {
+        const comet = document.createElement("div");
+        comet.classList.add("comet");
+
+        // Array di colori pastello tenui
+        const colors = ["#ffadad", "#ffd6a5", "#fdffb6", "#caffbf", "#9bf6ff", "#a0c4ff", "#bdb2ff"];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+
+        // Determina le coordinate verticali in cui vogliamo generare le comete dai lati:
+        let heroBottom = vh;  // di default, se non troviamo .hero
+        let footerTop = vh * 2; // default: se non troviamo il footer, ipotizziamo una pagina lunga
+        const heroElem = document.querySelector(".hero");
+        if (heroElem) {
+          const rect = heroElem.getBoundingClientRect();
+          // Conversione in coordinate assolute
+          heroBottom = rect.bottom + window.pageYOffset;
+        }
+        const footerElem = document.querySelector(".site-footer");
+        if (footerElem) {
+          const rectFooter = footerElem.getBoundingClientRect();
+          footerTop = rectFooter.top + window.pageYOffset;
+        }
+
+        // Scegli uno dei tre bordi:
+        // 0: Bordo inferiore dell'hero
+        // 1: Bordo sinistro (laterale)
+        // 2: Bordo destro (laterale)
+        const edge = Math.floor(Math.random() * 3);
+        let startX, startY, angle;
+        if (edge === 0) { // Bordo inferiore dell'hero
+          startX = Math.random() * vw;
+          // Appena al di sotto del fondo dell'hero (o appena a contatto)
+          startY = heroBottom - 5;
+          // Per farla muovere verso l'esterno (cioè verso il basso) imposta l'angolo a circa 90° (in radianti)
+          angle = Math.PI/2 + (Math.random() - 0.5) * (60 * Math.PI/180);  // ±30° variazione
+        } else if (edge === 1) { // Bordo sinistro
+          startX = -10; // leggermente fuori dalla viewport
+          // Genera y casualmente tra il fondo dell'hero e l'inizio del footer
+          startY = heroBottom + Math.random() * (footerTop - heroBottom);
+          // Per il bordo sinistro vogliamo far muovere la cometa verso l'interno (destra): angolo intorno a 0° ±30°
+          angle = (Math.random() - 0.5) * (60 * Math.PI/180);
+        } else if (edge === 2) { // Bordo destro
+          startX = vw + 10;
+          startY = heroBottom + Math.random() * (footerTop - heroBottom);
+          // Per il bordo destro, l'angolo deve essere attorno a 180° (o -180°) ±30°
+          angle = Math.PI + (Math.random() - 0.5) * (60 * Math.PI/180);
+        }
+
+        // Posiziona la cometa
+        comet.style.left = startX + "px";
+        comet.style.top = startY + "px";
+
+        // Imposta la distanza del movimento (tra 200 e 600px)
+        const distance = 180 + Math.random() * 1200;
+        const deltaX = Math.cos(angle) * distance;
+        const deltaY = Math.sin(angle) * distance;
+
+        // Durata compresa tra 1.5 e 3 secondi
+        const dur = 1.5 + Math.random() * 2;
+        const delay = 0;
+
+        // Converti l'angolo in gradi per le variabili CSS
+        const angleDeg = angle * 180 / Math.PI;
+        // La coda deve puntare nell'opposto della direzione di movimento
+        const tailAngleDeg = angleDeg + 180;
+
+        // Imposta le variabili CSS per il movimento e per orientare la coda
+        comet.style.setProperty("--tx", deltaX + "px");
+        comet.style.setProperty("--ty", deltaY + "px");
+        comet.style.setProperty("--dur", dur + "s");
+        comet.style.setProperty("--delay", delay + "s");
+        comet.style.setProperty("--color", color);
+        comet.style.setProperty("--tailAngle", tailAngleDeg + "deg");
+
+        // Aggiungi la cometa al body
+        document.body.appendChild(comet);
+
+        // Rimuovi la cometa al termine dell'animazione
+        setTimeout(() => {
+          comet.remove();
+        }, (dur + delay) * 1000);
+      }
+
+      // Genera una cometa ogni 300 ms (circa 3 al secondo)
+      setInterval(createComet, 300);
+    </script>
+
+
+
+    <script>
+    // Scroll morbido verso il basso.
+    function scrollToSection(targetOffset) {
+  window.scrollTo({
+    top: targetOffset,
+    behavior: 'smooth'
+  });
+}
+
+
+    </script>
+
+
+
+
+
+
+
+  </body>
+</html>

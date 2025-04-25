@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- NO INDEXING, inserito anche il file robots.txt -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Strutture - CISF 2027</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts e CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Categoria */
+    .category {
+      margin-bottom: 50px; /* Spazio tra le categorie */
+    }
+
+    .category h2 {
+      font-size: 2rem;
+      color: #0066cc; /* Accent color */
+      text-align: left;
+      margin-bottom: 10px; /* Spazio tra il sottotitolo e le card */
+      margin-left: 40px; /* Spazio tra il sottotitolo e le card */
+
+    }
+    /* Griglia delle categorie */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonne dinamiche, altrimenti grid-template-columns: repeat(3, 1fr); /* 3 colonne fisse */
+      gap: 5px; /* Spazio tra le card */
+      justify-content: center;
+    }
+
+
+      .structure-card {
+        text-align: center;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        background-color: #fff;
+      }
+      .structure-card img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .structure-card h3 {
+        font-size: 1.8rem;
+        margin: 10px 0;
+      }
+      .structure-card p {
+        font-size: 1rem;
+        margin: 5px 0;
+      }
+      .structure-card a {
+        color: #0066cc;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .structure-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <a href="index.html">CISF 2027</a>
+          </div>
+          <ul class="nav-links desktop-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programma.html">Programma</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="strutture.html" class="active">Strutture</a></li>
+            <li><a href="chi-siamo.html">Chi siamo</a></li>
+            <li><a href="sponsor.html">Sponsor</a></li>
+            <li><a href="iscrizioni.html">Iscrizioni</a></li>
+          </ul>
+          <div class="mobile-menu-icon">
+            <span class="hamburger"></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="content-offset"></div>
+
+    <!-- Sezione Strutture -->
+    <main class="container">
+      <section class="intro-section animate-on-scroll">
+        <h2>Alloggi per i Partecipanti</h2>
+        <p>Scopri gli ostelli convenzionati dove potrai alloggiare durante CISF 2027.</p>
+      </section>
+    <!-- Macrocategoria: Ostelli -->
+      <div class="category animate-on-scroll">
+        <h2>Ostelli</h2>
+        <div class="category-grid">
+          <div class="structure-card">
+            <img src="images/ostello1.jpg" alt="Ostello Aurora">
+            <h3>Ostello Aurora</h3>
+            <p>Via Roma, 12, Trento</p>
+            <p><a href="http://ostelloaurora.example.com" target="_blank">Visita il sito</a></p>
+          </div>
+          <div class="structure-card">
+            <img src="images/ostello2.jpg" alt="Ostello Boreale">
+            <h3>Ostello Boreale</h3>
+            <p>Viale dei Giardini, 8, Trento</p>
+            <p><a href="http://ostelloboreale.example.com" target="_blank">Visita il sito</a></p>
+          </div>
+          <div class="structure-card">
+            <img src="images/ostello3.jpg" alt="Ostello Celeste">
+            <h3>Ostello Celeste</h3>
+            <p>Piazza della Libertà, 5, Trento</p>
+            <p><a href="http://ostelloceleste.example.com" target="_blank">Visita il sito</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Macrocategoria: Laboratori -->
+      <div class="category animate-on-scroll">
+        <h2>Laboratori</h2>
+        <div class="category-grid">
+        <div class="structure-card">
+          <img src="images/laboratorio1.jpg" alt="Laboratorio A">
+          <h3>Laboratorio A</h3>
+          <p>Via delle Scienze, 15, Trento</p>
+          <p><a href="http://laboratorioA.example.com" target="_blank">Visita il sito</a></p>
+        </div>
+        <div class="structure-card">
+          <img src="images/laboratorio2.jpg" alt="Laboratorio B">
+          <h3>Laboratorio B</h3>
+          <p>Corso Einstein, 5, Trento</p>
+          <p><a href="http://laboratorioB.example.com" target="_blank">Visita il sito</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Macrocategoria: Altro -->
+    <div class="category animate-on-scroll">
+      <h2>Altro</h2>
+      <div class="category-grid">
+        <div class="structure-card">
+          <img src="images/altro1.jpg" alt="Centro Congressi">
+          <h3>Centro Congressi</h3>
+          <p>Piazza Università, 20, Trento</p>
+          <p><a href="http://centrocongressi.example.com" target="_blank">Visita il sito</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <img class="footer-logo" src="images/footer-logo.png" alt="Logo CISF">
+          <p>&copy; 2027 CISF - Conferenza Italiana degli Studenti di Fisica. Tutti i diritti riservati.</p>
+        </div>
+        <div class="footer-right">
+          <h3 class="footer-title">Contatti</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/cisf.27" target="_blank" class="social-item">
+              <img src="icons/ig-logo-white.png" alt="Instagram">
+              <span class="social-text">@cisf.27</span>
+            </a>
+            <a href="mailto:cisf27@ai-sf.it" class="social-item">
+              <img src="icons/mail-icon-white.png" alt="Email">
+              <span class="social-text">cisf27@ai-sf.it</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script per animazioni -->
+    <script>
+      function animateOnScroll() {
+        const windowHeight = window.innerHeight;
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          let ratio = 1 - ((rect.top-250) / (windowHeight * 1));
+          ratio = Math.min(Math.max(ratio, 0), 1);
+          el.style.opacity = ratio;
+          const translateY = 100 * (1 - ratio);
+          el.style.transform = `translateY(${translateY}px)`;
+        });
+      }
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+    </script>
+
+
+    <!-- Menu Mobile: off-canvas -->
+<div class="mobile-menu">
+  <button class="close-menu">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="programma.html">Programma</a></li>
+    <li><a href="speakers.html">Speakers</a></li>
+    <li><a href="strutture.html" class="active">Strutture</a></li>
+    <li><a href="chi-siamo.html">Chi siamo</a></li>
+    <li><a href="sponsor.html">Sponsor</a></li>
+    <li><a href="iscrizioni.html">Iscrizioni</a></li>
+  </ul>
+</div>
+
+<!-- Overlay per il menu mobile -->
+<div class="menu-overlay"></div>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Seleziona gli elementi necessari
+    const hamburger = document.querySelector(".mobile-menu-icon");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const closeButton = document.querySelector(".close-menu");
+    const overlay = document.querySelector(".menu-overlay");
+
+    // Funzione per aprire il menu mobile
+    function openMenu() {
+      mobileMenu.classList.add("active");
+      overlay.classList.add("active");
+    }
+
+    // Funzione per chiudere il menu mobile
+    function closeMenu() {
+      mobileMenu.classList.remove("active");
+      overlay.classList.remove("active");
+    }
+
+    // Attiva l'apertura al click del pulsante hamburger
+    if (hamburger) {
+      hamburger.addEventListener("click", openMenu);
+    }
+
+    // Attiva la chiusura al click del pulsante "close" e dell'overlay
+    if (closeButton) {
+      closeButton.addEventListener("click", closeMenu);
+    }
+    if (overlay) {
+      overlay.addEventListener("click", closeMenu);
+    }
+  });
+</script>
+
+<script>
+function animateOnScroll() {
+const windowHeight = window.innerHeight;
+// Seleziona tutti gli elementi con la classe animate-on-scroll
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+  const rect = el.getBoundingClientRect();
+  // Riduci il coefficiente per iniziare l'animazione prima
+  let ratio = 1 - ((rect.top-250) / (windowHeight * 1)); // Valore più basso per anticipare
+  ratio = Math.min(Math.max(ratio, 0), 1); // Limita il valore tra 0 e 1
+  el.style.opacity = ratio; // Aggiorna l'opacità
+  // Riduci la traslazione verticale per rendere l'effetto più discreto e rapido
+  const translateY = 100 * (1 - ratio);
+  el.style.transform = `translateY(${translateY}px)`;
+});
+}
+// Chiamata iniziale
+animateOnScroll();
+// Aggiorna ad ogni scroll
+window.addEventListener('scroll', animateOnScroll);
+</script>
+  </body>
+</html>

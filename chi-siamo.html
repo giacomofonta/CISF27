@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- NO INDEXING, inserito anche il file robots.txt -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Chi siamo - CISF 2027</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts e CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .about-section {
+        text-align: left;
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+      }
+      .organizer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .organizer {
+        text-align: center;
+      }
+      .organizer img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .organizer p {
+        margin-top: 10px;
+      }
+      .spacer {
+        height: 50px; /* Regola l'altezza a seconda delle tue esigenze */
+      }
+
+      .about-us {
+        text-align: left;
+        padding: 40px 30px;
+        background-color: #f2f2f2; /* o il colore che preferisci */
+        max-width: 1100px;
+        margin: 0 auto; /* Centra l'intera sezione nella pagina */
+      }
+
+      .about-us-subtitle {
+        color: #0066cc;  /* accent color */
+        font-size: 1rem;
+        margin-left: 20px; /* Sposta leggermente a destra i testi rispetto al padding */
+        margin-bottom: 20px; /* Crea uno spazio uniforme tra i vari testi */
+        text-transform: uppercase;
+      }
+      .about-us-title {
+        font-size: 2.5rem;
+        color: #333;
+        margin-left: 20px; /* Sposta leggermente a destra i testi rispetto al padding */
+        margin-bottom: 20px;
+      }
+
+      .about-us-text {
+        font-size: 1rem;
+        max-width: 1000px;
+        margin-left: 20px; /* Sposta leggermente a destra i testi rispetto al padding */
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+        color: #333; /* Assicura un buon contrasto con lo sfondo */
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <a href="index.html">CISF 2027</a>
+          </div>
+          <ul class="nav-links desktop-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programma.html">Programma</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="strutture.html">Strutture</a></li>
+            <li><a href="chi-siamo.html" class="active">Chi siamo</a></li>
+            <li><a href="sponsor.html">Sponsor</a></li>
+            <li><a href="iscrizioni.html">Iscrizioni</a></li>
+          </ul>
+          <div class="mobile-menu-icon">
+            <span class="hamburger"></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="content-offset"></div>
+
+    <!-- Sezione Chi siamo -->
+    <main class="container">
+
+      <section class="intro-section animate-on-scroll">
+        <h2 class="about-us-title">Chi siamo?</h2>
+        <p class="about-us-text">
+          L'Associazione Italiana Studenti di Fisica (AISF) è una no-profit nata nel 2014 con lo scopo di riunire gli studenti di fisica italiani, creando un network nazionale e promuovendo la divulgazione scientifica. Riconosciuta come National Committee per l’Italia dell’International Association of Physics Students (IAPS), l’AISF organizza eventi culturali e accademici, favorendo le relazioni tra studenti di tutte le università italiane e incoraggiandoli nella loro carriera. Ogni anno, promuove un incontro nazionale, la Conferenza Italiana Studenti di Fisica.        </p>
+        <img src="images/cisf-lastyear.jpg" alt="CISF anno scorso" style="width:90%; border-radius:10px; margin-top:20px;">
+        <h3 style="margin-top:30px;">Il Comitato Organizzatore Locale</h3>
+        <div class="organizer-grid">
+          <div class="organizer">
+            <img src="images/organizzatore1.jpg" alt="Organizzatore 1">
+            <p>Alessandro</p>
+          </div>
+          <div class="organizer">
+            <img src="images/organizzatore2.jpg" alt="Organizzatore 2">
+            <p>Beatrice</p>
+          </div>
+          <div class="organizer">
+            <img src="images/organizzatore3.jpg" alt="Organizzatore 3">
+            <p>Ciro</p>
+          </div>
+          <div class="organizer">
+            <img src="images/organizzatore4.jpg" alt="Organizzatore 4">
+            <p>Daniela</p>
+          </div>
+        </div>
+      </section>
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <img class="footer-logo" src="images/footer-logo.png" alt="Logo CISF">
+          <p>&copy; 2027 CISF - Conferenza Italiana degli Studenti di Fisica. Tutti i diritti riservati.</p>
+        </div>
+        <div class="footer-right">
+          <h3 class="footer-title">Contatti</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/cisf.27" target="_blank" class="social-item">
+              <img src="icons/ig-logo-white.png" alt="Instagram">
+              <span class="social-text">@cisf.27</span>
+            </a>
+            <a href="mailto:cisf27@ai-sf.it" class="social-item">
+              <img src="icons/mail-icon-white.png" alt="Email">
+              <span class="social-text">cisf27@ai-sf.it</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script per animazioni -->
+    <script>
+      function animateOnScroll() {
+        const windowHeight = window.innerHeight;
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          let ratio = 1 - ((rect.top-250) / (windowHeight * 1));
+          ratio = Math.min(Math.max(ratio, 0), 1);
+          el.style.opacity = ratio;
+          const translateY = 50 * (1 - ratio);
+          el.style.transform = `translateY(${translateY}px)`;
+        });
+      }
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+    </script>
+
+    <!-- Menu Mobile: off-canvas -->
+<div class="mobile-menu">
+  <button class="close-menu">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="programma.html">Programma</a></li>
+    <li><a href="speakers.html">Speakers</a></li>
+    <li><a href="strutture.html">Strutture</a></li>
+    <li><a href="chi-siamo.html" class="active">Chi siamo</a></li>
+    <li><a href="sponsor.html">Sponsor</a></li>
+    <li><a href="iscrizioni.html">Iscrizioni</a></li>
+  </ul>
+</div>
+
+<!-- Overlay per il menu mobile -->
+<div class="menu-overlay"></div>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Seleziona gli elementi necessari
+    const hamburger = document.querySelector(".mobile-menu-icon");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const closeButton = document.querySelector(".close-menu");
+    const overlay = document.querySelector(".menu-overlay");
+
+    // Funzione per aprire il menu mobile
+    function openMenu() {
+      mobileMenu.classList.add("active");
+      overlay.classList.add("active");
+    }
+
+    // Funzione per chiudere il menu mobile
+    function closeMenu() {
+      mobileMenu.classList.remove("active");
+      overlay.classList.remove("active");
+    }
+
+    // Attiva l'apertura al click del pulsante hamburger
+    if (hamburger) {
+      hamburger.addEventListener("click", openMenu);
+    }
+
+    // Attiva la chiusura al click del pulsante "close" e dell'overlay
+    if (closeButton) {
+      closeButton.addEventListener("click", closeMenu);
+    }
+    if (overlay) {
+      overlay.addEventListener("click", closeMenu);
+    }
+  });
+</script>
+
+  </body>
+</html>

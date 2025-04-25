@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Programma - CISF27</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Foglio di stile principale -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Stile specifico per la pagina programma con card */
+    .programma-container {
+      padding: 40px 0px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /*.programma-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }*/
+    /* Contenitore testo e bottone */
+    .programma-title {
+      display: flex; /* Layout orizzontale per il testo e il bottone */
+      flex-direction: row; /* Elementi allineati in una riga */
+      align-items: center; /* Centra verticalmente il contenuto */
+      justify-content: space-between; /* Posiziona bottone a destra e testi a sinistra */
+      margin-bottom: 40px;
+    }
+    /* Testo (h1 e p) resta centrato */
+    .programma-title .programma-text {
+      text-align: center; /* Mantiene centraggio del testo */
+      flex-grow: 1; /* Si espande per occupare lo spazio disponibile */
+    }
+    .programma-title h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .programma-title p {
+      color: #555;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* Griglia a 5 colonne (o adattabile in base allo schermo) */
+    .programma-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonne responsive */
+      gap: 30px; /* Spazio tra le colonne */
+      align-items: start; /* Permette alle colonne di adattarsi ai contenuti */
+    }
+
+    /* Regole solo per i dispositivi mobili */
+    @media (max-width: 1300px) {
+        .programma-cards {
+          padding: 0px 20px;
+        }
+    }
+    /* Ogni colonna rappresenta un giorno della conferenza */
+    .day-column {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow: hidden;
+
+      display: flex; /* Garantisce che il layout delle card sia flessibile */
+      flex-direction: column; /* Posiziona le card una sotto l'altra */
+      align-items: stretch; /* Estende il contenuto al massimo possibile */
+      padding: 14px; /* Padding interno della colonna */
+      padding-bottom: 0px; /* Bordi inferiori uniformi */
+      height: auto; /* Consente alla colonna di adattarsi automaticamente */
+    }
+
+
+
+
+    .day-column h2 {
+      color: #0066cc; /* Accent color */
+      text-align: center;
+      margin-top: 5px; /* Aggiungi un margine superiore per abbassare il titolo */
+      margin-bottom: 18px;
+      font-size: 1.8rem;
+
+
+    }
+    /* Card dell’evento */
+    .event-card {
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .event-card:hover {
+      transform: translateY(-5px);
+    }
+    /* Informazioni base dell’evento */
+    .event-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .event-info img.icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    /* Stile per il testo delle sessioni (Sessione Plenaria, Sessione Tecnica, ecc.) */
+    .event-card h3 {
+      text-transform: uppercase !important;
+      font-size: 0.7rem !important;
+      color: #4097EF !important;
+      text-align: left !important;
+      margin: 20px 0 5px !important;
+    }
+
+    /* Allinea a sinistra anche i titoli degli eventi */
+    .event-card h2.event-title {
+      margin: 5px 0 15px;
+      text-align: left;
+      font-size: 1.5rem;
+      line-height: 1.3; /* Valore ridotto, prova a modificarlo fino a ottenere l'effetto desiderato */
+    }
+
+    /* Lista dei professori/ospiti */
+    .speakers {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .speakers li {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #333;
+    }
+    .speakers li .speaker-name {
+      font-weight: 600;
+      margin-right: 5px;
+    }
+    .speakers li .speaker-desc {
+      margin-top: 5px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .venue-link {
+      color: inherit;       /* Fa sì che il link prenda lo stesso colore del testo circostante */
+      text-decoration: none; /* Rimuove la sottolineatura di default */
+      transition: color 0.3s ease;
+    }
+
+    .venue-link:hover {
+      filter: brightness(1.6);
+    }
+
+  </style>
+</head>
+<body>
+  <!-- HEADER CON NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">CISF 2027</a>
+        </div>
+        <ul class="nav-links desktop-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="programma.html" class="active">Programma</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="strutture.html">Strutture</a></li>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="sponsor.html">Sponsor</a></li>
+          <li><a href="iscrizioni.html">Iscrizioni</a></li>
+        </ul>
+        <div class="mobile-menu-icon">
+          <span class="hamburger"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MENU MOBILE OFF-CANVAS -->
+  <div class="mobile-menu">
+    <button class="close-menu">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="programma.html" class="active">Programma</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="strutture.html">Strutture</a></li>
+      <li><a href="chi-siamo.html">Chi siamo</a></li>
+      <li><a href="sponsor.html">Sponsor</a></li>
+      <li><a href="iscrizioni.html">Iscrizioni</a></li>
+    </ul>
+  </div>
+  <div class="menu-overlay"></div>
+  <div class="content-offset"></div>
+
+  <!-- CONTENUTO PRINCIPALE -->
+  <main class="programma-container">
+
+    <div class="programma-title animate-on-scroll">
+      <div class="programma-text">
+        <h1>Programma</h1>
+        <p>Scopri gli eventi e le lezioni in programma per ogni giorno della conferenza.</p>
+      </div>
+    </div>
+
+    <section class="programma-cards">
+      <!-- Colonna per il giorno 1 -->
+      <div class="day-column animate-on-scroll">
+        <h2>24 Aprile</h2>
+        <!-- Event Card -->
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/accademia_scienze" target="_blank" class="venue-link">
+              Accademia delle Scienze - Sala Mappamondi
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>11:00 - 13:00</span>
+          </div>
+          <h3>Sessione Plenaria</h3>
+          <h2 class="event-title">Fisica delle Particelle Elementari</h2>
+          <ul class="speakers">
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Prof. Paolo Gambino</span>
+              </div>
+              <p class="speaker-desc">
+                Full Professor of Theoretical Physics, Dpt. of Physics, University of Turin, Corresponding Fellow of the Academy of Sciences of Turin.
+              </p>
+            </li>
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Prof. Marco Panero</span>
+              </div>
+              <p class="speaker-desc">
+                Associate Professor, Dpt. of Physics, University of Turin.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="event-card animate-on-scroll">
+
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/accademia_scienze" target="_blank" class="venue-link">
+              Palazzo delle Scienze - Aula A
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>14:00 - 15:30</span>
+          </div>
+          <h3>Sessione Speciale</h3>
+          <h2 class="event-title">Astrofisica Moderna</h2>
+          <ul class="speakers">
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Dr. Francesca Leone</span>
+              </div>
+              <p class="speaker-desc">
+                Ricercatrice in Astrofisica, Università di Firenze.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Aggiungi eventuali altre card per il giorno 1 -->
+      </div>
+
+      <!-- Colonna per il giorno 2 -->
+      <div class="day-column animate-on-scroll">
+        <h2>25 Aprile</h2>
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/accademia_scienze" target="_blank" class="venue-link">
+              Polifunzionale - Aula Magna
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>09:00 - 11:00</span>
+          </div>
+          <h3>Sessione Tecnica</h3>
+          <h2 class="event-title">Innovazioni in Fisica Applicata</h2>
+          <ul class="speakers">
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Dr. Luca Verdi</span>
+              </div>
+              <p class="speaker-desc">
+                Ricercatore senior, Università di Milano.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/polifunzionale" target="_blank" class="venue-link">
+              Polifunzionale - Aula B
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>12:00 - 13:30</span>
+          </div>
+          <h3>Workshop</h3>
+          <h2 class="event-title">Tecnologie Quantum</h2>
+          <ul class="speakers">
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Dr. Luigi Rinaldi</span>
+              </div>
+              <p class="speaker-desc">
+                Specialista in Quantum Computing, CERN.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+
+
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/cinema-roma" target="_blank" class="venue-link">
+              Cinema Nuovo Roma
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>21:00 - 23:30</span>
+          </div>
+          <h3>Evento</h3>
+          <h2 class="event-title">Botta di Coulomb</h2>
+          <ul class="speakers">
+            <li>
+              <p class="speaker-desc" style="font-weight: bold;">
+                Evento in collaborazione con il CL Pavia
+              </p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Colonna per il giorno 3 -->
+      <div class="day-column animate-on-scroll">
+        <h2>26 Aprile</h2>
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/accademia_scienze" target="_blank" class="venue-link">
+              Centro Congressi - Sala Bullon
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>10:00 - 12:00</span>
+          </div>
+          <h3>Workshop</h3>
+          <h2 class="event-title">Nuove Frontiere della Ricerca</h2>
+          <ul class="speakers">
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Dr.ssa Francesca Rossi</span>
+              </div>
+              <p class="speaker-desc">
+                Esperta di tecnologie avanzate, Università di Napoli.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/congress" target="_blank" class="venue-link">
+              Centro Congressi - Sala Blu
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>14:00 - 16:00</span>
+          </div>
+          <h3>Tavola Rotonda</h3>
+          <h2 class="event-title">Fisica Teorica e Pratica</h2>
+          <ul class="speakers">
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Prof. Alberto Moretti</span>
+              </div>
+              <p class="speaker-desc">
+                Professore Emerito, Dipartimento di Fisica, Università di Pisa.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/congress" target="_blank" class="venue-link">
+              Centro Congressi
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>16:00 - 18:30</span>
+          </div>
+          <h2 class="event-title">Parallel sessions</h2>
+        </div>
+
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/buonconsiglio" target="_blank" class="venue-link">
+              Castello del Buonconsiglio
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>20:00 - 00:00</span>
+          </div>
+          <h2 class="event-title">Cena sociale</h2>
+        </div>
+
+      </div>
+
+      <!-- Colonna per il giorno 4 -->
+      <div class="day-column animate-on-scroll">
+        <h2>27 Aprile</h2>
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/accademia_scienze" target="_blank" class="venue-link">
+              Auditorium Comunale
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>10:00 - 12:00</span>
+          </div>
+          <h3>Sessione Interattiva</h3>
+          <h2 class="event-title">Esperienze Didattiche</h2>
+          <ul class="speakers">
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Prof.ssa Maria Bianchi</span>
+              </div>
+              <p class="speaker-desc">
+                Responsabile programmi educativi, Istituto Tecnico.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/auditorium" target="_blank" class="venue-link">
+              Auditorium Comunale - Sala Verde
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>15:00 - 17:00</span>
+          </div>
+          <h3>Dimostrazione</h3>
+          <h2 class="event-title">Fisica Nucleare</h2>
+          <ul class="speakers">
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Dr.ssa Giulia Conti</span>
+              </div>
+              <p class="speaker-desc">
+                Esperta in Fisica Nucleare, Università di Bari.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Colonna per il giorno 5 -->
+      <div class="day-column animate-on-scroll">
+        <h2>28 Aprile</h2>
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/accademia_scienze" target="_blank" class="venue-link">
+              Centro Studi - Aula Olimpia
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>11:30 - 13:00</span>
+          </div>
+          <h3>Sessione Plenaria</h3>
+          <h2 class="event-title">Fisica e Innovazione</h2>
+          <ul class="speakers">
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Prof. Giovanni Verdi</span>
+              </div>
+              <p class="speaker-desc">
+                Direttore del Dipartimento di Fisica, Università di Roma.
+              </p>
+            </li>
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Dr. Elena Neri</span>
+              </div>
+              <p class="speaker-desc">
+                Ricercatrice in Fisica Applicata, Università di Bologna.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="event-card animate-on-scroll">
+          <div class="event-info">
+            <img class="icon" src="icons/icon_place.png" alt="Luogo">
+            <a href="https://www.example.com/studi" target="_blank" class="venue-link">
+              Centro Studi - Aula Saturno
+            </a>
+          </div>
+          <div class="event-info">
+            <img class="icon" src="icons/icon_clock.png" alt="Orario">
+            <span>15:00 - 17:00</span>
+          </div>
+          <h3>Conferenza</h3>
+          <h2 class="event-title">Materia Oscura</h2>
+          <ul class="speakers">
+            <li>
+              <div class="event-info">
+                <img class="icon" src="icons/icon_person.png" alt="Relatore">
+                <span class="speaker-name">Dr. Riccardo Ferrari</span>
+              </div>
+              <p class="speaker-desc">
+                Ricercatore Senior, ESA.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <img class="footer-logo" src="images/footer-logo.png" alt="Logo CISF">
+        <p>&copy; 2027 CISF27 - Conferenza Italiana degli Studenti di Fisica. Tutti i diritti riservati.</p>
+      </div>
+      <div class="footer-right">
+        <h3 class="footer-title">Contatti</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/cisf.27" target="_blank" class="social-item">
+            <img src="icons/ig-logo-white.png" alt="Instagram">
+            <span class="social-text">@cisf.27</span>
+          </a>
+          <a href="mailto:cisf27@ai-sf.it" class="social-item">
+            <img src="icons/mail-icon-white.png" alt="Email">
+            <span class="social-text">cisf27@ai-sf.it</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT PER MOBILE MENU -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const hamburger = document.querySelector(".mobile-menu-icon");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const closeButton = document.querySelector(".close-menu");
+      const overlay = document.querySelector(".menu-overlay");
+
+      function openMenu() {
+        mobileMenu.classList.add("active");
+        overlay.classList.add("active");
+      }
+      function closeMenu() {
+        mobileMenu.classList.remove("active");
+        overlay.classList.remove("active");
+      }
+
+      if (hamburger) {
+        hamburger.addEventListener("click", openMenu);
+      }
+      if (closeButton) {
+        closeButton.addEventListener("click", closeMenu);
+      }
+      if (overlay) {
+        overlay.addEventListener("click", closeMenu);
+      }
+    });
+  </script>
+
+  <!-- SCRIPT PER ANIMAZIONE ALLO SCROLL -->
+  <script>
+    function animateOnScroll() {
+      const windowHeight = window.innerHeight;
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        let ratio = 1 - (rect.top - 550) / windowHeight;
+        ratio = Math.min(Math.max(ratio, 0), 1);
+        el.style.opacity = ratio;
+        const translateY = 50 * (1 - ratio);
+        el.style.transform = `translateY(${translateY}px)`;
+      });
+    }
+    animateOnScroll();
+    window.addEventListener('scroll', animateOnScroll);
+  </script>
+</body>
+</html>

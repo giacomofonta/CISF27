@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- NO INDEXING, inserito anche il file robots.txt -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Speakers - CISF 2027</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts e CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Piccolo stile aggiuntivo per i "speaker-card" */
+      .speaker-card {
+        text-align: center;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        background-color: #fff;
+      }
+      .speaker-card img {
+        max-width: 100%;
+        border-radius: 50%;
+      }
+      .speaker-area {
+        color: #0066cc;
+        font-size: 1rem;
+        margin: 10px 0;
+      }
+      .speaker-name {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .speaker-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .speaker-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Colonne dinamiche, altrimenti grid-template-columns: repeat(3, 1fr); /* 3 colonne fisse */
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <a href="index.html">CISF 2027</a>
+          </div>
+          <ul class="nav-links desktop-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programma.html">Programma</a></li>
+            <li><a href="speakers.html" class="active">Speakers</a></li>
+            <li><a href="strutture.html">Strutture</a></li>
+            <li><a href="chi-siamo.html">Chi siamo</a></li>
+            <li><a href="sponsor.html">Sponsor</a></li>
+            <li><a href="iscrizioni.html">Iscrizioni</a></li>
+          </ul>
+          <div class="mobile-menu-icon">
+            <span class="hamburger"></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="content-offset"></div>
+
+    <!-- Sezione Speakers -->
+    <main class="container">
+      <section class="intro-section animate-on-scroll">
+        <h2>Speakers della Conferenza</h2>
+        <p>Conosci i nostri relatori, esperti nei rispettivi ambiti di ricerca che condivideranno la loro esperienza durante CISF 2027.</p>
+      </section>
+      <section class="speaker-grid">
+        <!-- Speaker 1 -->
+        <div class="speaker-card animate-on-scroll">
+          <img src="images/speaker1.jpg" alt="Speaker 1">
+          <p class="speaker-area">Fisica Teorica</p>
+          <h3 class="speaker-name">Prof. Mario Rossi</h3>
+          <p class="speaker-desc">Esperto in teorie delle stringhe e gravità quantistica, il Prof. Rossi ha pubblicato numerosi articoli di punta nel settore.</p>
+        </div>
+        <!-- Speaker 2 -->
+        <div class="speaker-card animate-on-scroll">
+          <img src="images/speaker2.jpg" alt="Speaker 2">
+          <p class="speaker-area">Fisica Applicata</p>
+          <h3 class="speaker-name">Dott.ssa Lucia Bianchi</h3>
+          <p class="speaker-desc">La Dott.ssa Bianchi si occupa di innovazioni tecnologiche e applicazioni della fisica in ambito industriale e medicale.</p>
+        </div>
+        <!-- Speaker 3 -->
+        <div class="speaker-card animate-on-scroll">
+          <img src="images/speaker3.jpg" alt="Speaker 3">
+          <p class="speaker-area">Astrofisica</p>
+          <h3 class="speaker-name">Prof. Giovanni Verdi</h3>
+          <p class="speaker-desc">Con un background in astrofisica sperimentale, il Prof. Verdi ha guidato progetti internazionali di osservazione cosmica.</p>
+        </div>
+
+
+
+        <!-- Speaker 1 -->
+        <div class="speaker-card animate-on-scroll">
+          <img src="images/speaker1.jpg" alt="Speaker 1">
+          <p class="speaker-area">Fisica Teorica</p>
+          <h3 class="speaker-name">Prof. Mario Rossi</h3>
+          <p class="speaker-desc">Esperto in teorie delle stringhe e gravità quantistica, il Prof. Rossi ha pubblicato numerosi articoli di punta nel settore.</p>
+        </div>
+        <!-- Speaker 2 -->
+        <div class="speaker-card animate-on-scroll">
+          <img src="images/speaker2.jpg" alt="Speaker 2">
+          <p class="speaker-area">Fisica Applicata</p>
+          <h3 class="speaker-name">Dott.ssa Lucia Bianchi</h3>
+          <p class="speaker-desc">La Dott.ssa Bianchi si occupa di innovazioni tecnologiche e applicazioni della fisica in ambito industriale e medicale.</p>
+        </div>
+        <!-- Speaker 3 -->
+        <div class="speaker-card animate-on-scroll">
+          <img src="images/speaker3.jpg" alt="Speaker 3">
+          <p class="speaker-area">Astrofisica</p>
+          <h3 class="speaker-name">Prof. Giovanni Verdi</h3>
+          <p class="speaker-desc">Con un background in astrofisica sperimentale, il Prof. Verdi ha guidato progetti internazionali di osservazione cosmica.</p>
+        </div>
+        <!-- Aggiungi ulteriori speaker se necessario -->
+      </section>
+    </main>
+
+    <!-- Footer (come definito) -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <img class="footer-logo" src="images/footer-logo.png" alt="Logo CISF">
+          <p>&copy; 2027 CISF - Conferenza Italiana degli Studenti di Fisica. Tutti i diritti riservati.</p>
+        </div>
+        <div class="footer-right">
+          <h3 class="footer-title">Contatti</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/cisf.27" target="_blank" class="social-item">
+              <img src="icons/ig-logo-white.png" alt="Instagram">
+              <span class="social-text">@cisf.27</span>
+            </a>
+            <a href="mailto:cisf27@ai-sf.it" class="social-item">
+              <img src="icons/mail-icon-white.png" alt="Email">
+              <span class="social-text">cisf27@ai-sf.it</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script per animazioni -->
+    <script>
+      function animateOnScroll() {
+        const windowHeight = window.innerHeight;
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          let ratio = 1 - ((rect.top-350) / (windowHeight * 1));
+          ratio = Math.min(Math.max(ratio, 0), 1);
+          el.style.opacity = ratio;
+          const translateY = 50 * (1 - ratio);
+          el.style.transform = `translateY(${translateY}px)`;
+        });
+      }
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+    </script>
+
+
+    <!-- Menu Mobile: off-canvas -->
+<div class="mobile-menu">
+  <button class="close-menu">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="programma.html">Programma</a></li>
+    <li><a href="speakers.html" class="active">Speakers</a></li>
+    <li><a href="strutture.html">Strutture</a></li>
+    <li><a href="chi-siamo.html">Chi siamo</a></li>
+    <li><a href="sponsor.html">Sponsor</a></li>
+    <li><a href="iscrizioni.html">Iscrizioni</a></li>
+  </ul>
+</div>
+
+<!-- Overlay per il menu mobile -->
+<div class="menu-overlay"></div>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Seleziona gli elementi necessari
+    const hamburger = document.querySelector(".mobile-menu-icon");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const closeButton = document.querySelector(".close-menu");
+    const overlay = document.querySelector(".menu-overlay");
+
+    // Funzione per aprire il menu mobile
+    function openMenu() {
+      mobileMenu.classList.add("active");
+      overlay.classList.add("active");
+    }
+
+    // Funzione per chiudere il menu mobile
+    function closeMenu() {
+      mobileMenu.classList.remove("active");
+      overlay.classList.remove("active");
+    }
+
+    // Attiva l'apertura al click del pulsante hamburger
+    if (hamburger) {
+      hamburger.addEventListener("click", openMenu);
+    }
+
+    // Attiva la chiusura al click del pulsante "close" e dell'overlay
+    if (closeButton) {
+      closeButton.addEventListener("click", closeMenu);
+    }
+    if (overlay) {
+      overlay.addEventListener("click", closeMenu);
+    }
+  });
+</script>
+
+  </body>
+</html>

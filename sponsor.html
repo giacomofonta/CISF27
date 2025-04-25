@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- NO INDEXING, inserito anche il file robots.txt -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Sponsor - CISF 2027</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Foglio di stile principale -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Stile specifico per la pagina sponsor */
+      .sponsor-intro {
+        text-align: center;
+        margin: 40px 0;
+      }
+      .sponsor-intro h2 {
+        color: #0066cc; /* Accent color */
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      .sponsor-intro h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      .sponsor-intro p {
+        font-size: 1rem;
+        color: #555;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Sezioni per le categorie di sponsor */
+      .sponsor-category {
+        margin: 60px 0;
+      }
+      .sponsor-category h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        text-align: center;
+        color: #666; /* Titoli in grigio */
+      }
+
+      /* Griglia dei loghi degli sponsor */
+      .sponsor-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+      }
+      .sponsor-card {
+        flex: 1 1 200px;
+        text-align: center;
+        padding: 20px;
+      }
+      .sponsor-card img {
+        max-width: 100%;
+        max-height: 100px;
+        object-fit: contain;
+        filter: grayscale(0.2);
+        transition: filter 0.3s ease;
+      }
+      .sponsor-card img:hover {
+        filter: grayscale(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER CON NAVBAR -->
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <a href="index.html">CISF 2027</a>
+          </div>
+          <ul class="nav-links desktop-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programma.html">Programma</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="strutture.html">Strutture</a></li>
+            <li><a href="chi-siamo.html">Chi siamo</a></li>
+            <li><a href="sponsor.html" class="active">Sponsor</a></li>
+            <li><a href="iscrizioni.html">Iscrizioni</a></li>
+          </ul>
+          <div class="mobile-menu-icon">
+            <span class="hamburger"></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MENU MOBILE OFF-CANVAS -->
+    <div class="mobile-menu">
+      <button class="close-menu">&times;</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programma.html">Programma</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="strutture.html">Strutture</a></li>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="sponsor.html" class="active">Sponsor</a></li>
+        <li><a href="iscrizioni.html">Iscrizioni</a></li>
+      </ul>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <!-- Offset per il contenuto, se previsto -->
+    <div class="content-offset"></div>
+
+    <!-- CONTENUTO PRINCIPALE -->
+    <main class="container">
+      <!-- Sezione introduttiva con animazione -->
+      <section class="intro-section animate-on-scroll">
+        <h2>Le Collaborazioni</h2>
+        <p>
+          Scopri le aziende e gli enti che hanno collaborato per realizzare CISF27,
+          rendendo possibile questo evento straordinario.
+        </p>
+      </section>
+
+      <!-- Sezione: Gli Organizzatori -->
+      <section class="sponsor-category animate-on-scroll" id="organizzatori">
+        <h2 class="animate-on-scroll">Gli Organizzatori</h2>
+        <section class="sponsor-grid animate-on-scroll">
+          <div class="sponsor-card animate-on-scroll">
+            <a href="https://www.ai-sf.it" target="_blank">
+              <img src="images/aisf-logo.png" alt="Organizzatore 1">
+            </a>
+          </div>
+          <div class="sponsor-card animate-on-scroll">
+            <a href="https://www.ai-sf.it/trento" target="_blank">
+              <img src="images/aisf-trento.png" alt="Organizzatore 2">
+            </a>
+          </div>
+          <div class="sponsor-card animate-on-scroll">
+            <a href="https://www.unitn.it/it" target="_blank">
+              <img src="images/UniTrento_colore.png" alt="Organizzatore 2">
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <!-- Sezione: Partner -->
+      <section class="sponsor-category animate-on-scroll" id="partner">
+        <h2 class="animate-on-scroll">Partner</h2>
+        <section class="sponsor-grid animate-on-scroll">
+          <div class="sponsor-card animate-on-scroll">
+            <a href="https://www.zanichelli.it" target="_blank">
+              <img src="images/sponsor10.png" alt="Partner 1">
+            </a>
+          </div>
+          <div class="sponsor-card animate-on-scroll">
+            <a href="https://www.infn.it" target="_blank">
+              <img src="images/sponsor8.png" alt="Partner 2">
+            </a>
+          </div>
+          <div class="sponsor-card animate-on-scroll">
+            <a href="https://www.wolfram.com" target="_blank">
+              <img src="images/sponsor9.png" alt="Partner 2">
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <!-- Sezione: Sponsor -->
+      <section class="sponsor-category animate-on-scroll" id="sponsor">
+        <h2 class="animate-on-scroll">Sponsor</h2>
+        <section class="sponsor-grid animate-on-scroll">
+          <div class="sponsor-card animate-on-scroll">
+            <a href="https://www.inaf.it/it" target="_blank">
+              <img src="images/sponsor1.png" alt="Sponsor 1">
+            </a>
+          </div>
+          <div class="sponsor-card animate-on-scroll">
+            <a href="https://www.fbk.eu/it/" target="_blank">
+              <img src="images/sponsor2.png" alt="Sponsor 2">
+            </a>
+          </div>
+          <div class="sponsor-card animate-on-scroll">
+            <a href="https://www.terabit-project.it/it/" target="_blank">
+              <img src="images/sponsor7.png" alt="Sponsor 7">
+            </a>
+          </div>
+          <!-- Altri loghi degli sponsor -->
+        </section>
+      </section>
+
+      <!-- Sezione: Con il Patrocinio di -->
+      <section class="sponsor-category animate-on-scroll" id="patrocinio">
+        <h2 class="animate-on-scroll">Con il Patrocinio di</h2>
+        <section class="sponsor-grid animate-on-scroll">
+          <div class="sponsor-card animate-on-scroll">
+            <a href="https://www.comune.trento.it/" target="_blank">
+              <img src="images/Comune-di-Trento.png" alt="Patrocinio 1">
+            </a>
+          </div>
+          <div class="sponsor-card animate-on-scroll">
+            <a href="https://www.asi.it" target="_blank">
+              <img src="images/Agenzia_Spaziale_Italiana.png" alt="Patrocinio 2">
+            </a>
+          </div>
+          <!-- Altri loghi per il patrocinio -->
+        </section>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <img class="footer-logo" src="images/footer-logo.png" alt="Logo CISF">
+          <p>&copy; 2027 CISF27 - Conferenza Italiana degli Studenti di Fisica. Tutti i diritti riservati.</p>
+        </div>
+        <div class="footer-right">
+          <h3 class="footer-title">Contatti</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/cisf.27" target="_blank" class="social-item">
+              <img src="icons/ig-logo-white.png" alt="Instagram">
+              <span class="social-text">@cisf.27</span>
+            </a>
+            <a href="mailto:cisf27@ai-sf.it" class="social-item">
+              <img src="icons/mail-icon-white.png" alt="Email">
+              <span class="social-text">cisf27@ai-sf.it.it</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPT PER ANIMAZIONE ALLO SCROLL -->
+    <script>
+      function animateOnScroll() {
+        const windowHeight = window.innerHeight;
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          let ratio = 1 - (rect.top-550) / windowHeight;
+          ratio = Math.min(Math.max(ratio, 0), 1);
+          el.style.opacity = ratio;
+          const translateY = 50 * (1 - ratio);
+          el.style.transform = `translateY(${translateY}px)`;
+        });
+      }
+      // Esegui subito e al scroll
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+    </script>
+
+    <!-- SCRIPT PER MOBILE MENU -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const hamburger = document.querySelector(".mobile-menu-icon");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const closeButton = document.querySelector(".close-menu");
+        const overlay = document.querySelector(".menu-overlay");
+
+        function openMenu() {
+          mobileMenu.classList.add("active");
+          overlay.classList.add("active");
+        }
+        function closeMenu() {
+          mobileMenu.classList.remove("active");
+          overlay.classList.remove("active");
+        }
+
+        if (hamburger) {
+          hamburger.addEventListener("click", openMenu);
+        }
+        if (closeButton) {
+          closeButton.addEventListener("click", closeMenu);
+        }
+        if (overlay) {
+          overlay.addEventListener("click", closeMenu);
+        }
+      });
+    </script>
+  </body>
+</html>
